@@ -1,4 +1,4 @@
-#include "PdfActionsWindow.h"
+#include "include/Dialogs/PdfActionsWindow.h"
 
 PDFActionsWindow::PDFActionsWindow(QWidget *parent, QString type_action, QGraphicsScene* _scene, QString _page_size)
     : QDialog(parent), set_type_action(type_action), scene(_scene), page_size(_page_size) {
