@@ -81,6 +81,13 @@ FORMS += \
     mainwindow.ui
 
 # Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+target.path = /usr/bin
+INSTALLS += target
+
+desktop.path = /usr/share/applications
+desktop.files = packaging/rpm/graphics-editor.desktop
+INSTALLS += desktop
+
+icon.path = /usr/share/icons/hicolor/256x256/apps
+icon.files = packaging/rpm/graphics-editor.png
+INSTALLS += icon
