@@ -2,7 +2,7 @@
 #include "QStyleFactory"
 #include "QSettings"
 #include "QFont"
-#include "ApplicationWindow.h"
+#include "include/Application/ApplicationWindow.h"
 
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
