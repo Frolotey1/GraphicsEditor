@@ -1,0 +1,16 @@
+services:
+  graphics-editor:
+    build: .
+    image: graphics-editor:1.0
+    container_name: graphics-editor
+
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_QPA_PLATFORM=xcb     
+      - QT_X11_NO_MITSHM=1      
+
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ${HOME}/.Xauthority:/root/.Xauthority:rw
+
+    network_mode: host
