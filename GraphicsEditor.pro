@@ -4,7 +4,7 @@ CONFIG += c++17
 
 SOURCES += \
     src/Menu/AccessibilityMenu.cpp \
-    ApplicationWindow.cpp \
+    src/Application/ApplicationWindow.cpp \
     src/Search/CollectAllActions.cpp \
     src/Dialogs/ConfigureGraphicsColorWindow.cpp \
     src/Dialogs/PdfActionsWindow.cpp \
@@ -25,7 +25,7 @@ SOURCES += \
     src/Styles/StyleLineCircuitLists.cpp \
     src/Settings/WindowThemeManager.cpp \
     main.cpp \
-    mainwindow.cpp \
+    src/Window/mainwindow.cpp \
     src/Dialogs/BrushOwnColorWindow.cpp \
     src/Graphics/TextObject.cpp \
     src/Dialogs/CreateInFormatWindow.cpp \
@@ -42,7 +42,7 @@ SOURCES += \
 
 HEADERS += \
     include/Menu/AccessibilityMenu.h \
-    ApplicationWindow.h \
+    include/Application/ApplicationWindow.h \
     include/Search/CollectAllActions.h \
     include/Dialogs/ConfigureGraphicsColorWindow.h \
     include/GithubWiki/DocumentationGithubInstructionsLists.h \
@@ -61,7 +61,7 @@ HEADERS += \
     include/Styles/StyleJoinCircuitLists.h \
     include/Styles/StyleLineCircuitLists.h \
     include/Settings/WindowThemeManager.h \
-    mainwindow.h \
+    include/Window/mainwindow.h \
     include/Dialogs/CircuitOwnColorWindow.h \
     include/Dialogs/ConfigureFontWindow.h \
     include/Dialogs/BrushOwnColorWindow.h \
@@ -78,7 +78,7 @@ HEADERS += \
     include/Settings/ObjectSettings.h
 
 FORMS += \
-    mainwindow.ui
+    forms/mainwindow.ui
 
 # Default rules for deployment.
 target.path = /usr/bin
