@@ -1,3 +1,20 @@
+FROM fedora:44 AS builder
+
+RUN dnf install -y \
+    qt6-qtbase-devel \
+    qt6-qtpdf-devel \
+    qt6-qtmultimedia-devel \
+    qt6-qtsvg-devel \
+    qt6-qttools-devel \
+    gcc-c++ \
+    make \
+    && dnf clean all
+
+WORKDIR /src
+COPY . .
+
+RUN qmake6 GraphicsEditor.pro && make -j$(nproc)
+
 FROM fedora:44
 
 RUN dnf install -y \
@@ -10,15 +27,11 @@ RUN dnf install -y \
     mesa-libEGL \
     libxkbcommon-x11 \
     xcb-util-cursor \
-    xcb-util-wm \
-    xcb-util-image \
-    xcb-util-keysyms \
-    xcb-util-renderutil \
-    libxcb \
     && dnf clean all
 
-COPY GraphicsEditor /usr/bin/GraphicsEditor
-COPY graphics-editor.desktop /usr/share/applications/
-COPY graphics-editor.png /usr/share/icons/hicolor/256x256/apps/
+COPY --from=builder /src/GraphicsEditor /usr/bin/GraphicsEditor
+
+COPY --from=builder /src/packaging/rpm/graphics-editor.desktop /usr/share/applications/
+COPY --from=builder /src/packaging/rpm/graphics-editor-256.png /usr/share/icons/hicolor/256x256/apps/
 
 ENTRYPOINT ["/usr/bin/GraphicsEditor"]
