@@ -111,7 +111,7 @@ private:
     void setupInstrumentsMenu();
     void setupCommonSettingsMenu();
     void setupReferenceMenu();
-    bool isDesktopOpenAvailable();
+    bool isRunningInContainer() const;
 
     QWidget* centralWidget = nullptr;
     QToolBar* toolBar = nullptr;
