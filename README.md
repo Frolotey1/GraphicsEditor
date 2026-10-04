@@ -104,7 +104,7 @@ sudo docker run --rm --security-opt label=disable -e DISPLAY=$DISPLAY -e QT_QPA_
 
 Далее можно отозвать доступ к X-серверу через:
 ```
-xhost +local:docker
+xhost -local:docker
 ```
 
 5) После успешной сборки пользователь может работать с приложением. Для этого нужно запустить бинарник или установить пакет:
