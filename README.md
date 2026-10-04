@@ -97,7 +97,9 @@ xhost +local:docker
 Далее уже устанавливать и запускать Docker-контейнер:
 ```
 1) Установка контейнера под приложение: sudo docker build -t graphics-editor .
-2) Запуск контейнера: sudo docker run -it graphics-editor
+2) Запуск контейнера:
+sudo docker run --rm --security-opt label=disable -e DISPLAY=$DISPLAY -e QT_QPA_PLATFORM=xcb -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix:rw -v $HOME/.Xauthority:/root/.Xauthority:rw --network host graphics-editor
+
 ```
 
 Далее можно отозвать доступ к X-серверу через:
