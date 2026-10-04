@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QStyleFactory>
 #include <QDesktopServices>
+#include <QStandardPaths>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -110,6 +111,7 @@ private:
     void setupInstrumentsMenu();
     void setupCommonSettingsMenu();
     void setupReferenceMenu();
+    bool isDesktopOpenAvailable();
 
     QWidget* centralWidget = nullptr;
     QToolBar* toolBar = nullptr;

@@ -660,7 +660,7 @@ void ApplicationWindow::setupReferenceMenu()
         });
     }
 
-    if (github_instructions_tool_button) {
+    if (github_instructions_tool_button && isDesktopOpenAvailable()) {
         connect(github_instructions_tool_button, &QToolButton::clicked, this, []() {
             QDesktopServices::openUrl(
                 QUrl("https://github.com/Frolotey1/GraphicsEditor/tree/main/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F"));
@@ -681,6 +681,8 @@ void ApplicationWindow::setupReferenceMenu()
                 }
             });
         }
+    } else {
+        github_instructions_tool_button->setVisible(false);
     }
 }
 
@@ -731,6 +733,19 @@ void ApplicationWindow::setupPdfMenu()
             }
         });
     }
+}
+bool ApplicationWindow::isDesktopOpenAvailable() {
+    const QString xdg_open = QStandardPaths::findExecutable("xdg-open");
+
+    if(xdg_open.isEmpty()) {
+        return false;
+    }
+
+    if(qEnvironmentVariableIsEmpty("DBUS_SESSION_BUS_ADDRESS")) {
+        return false;
+    }
+
+    return true;
 }
 
 void ApplicationWindow::setupObjectSettings() {
