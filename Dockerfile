@@ -1,5 +1,7 @@
 FROM fedora:44 AS builder
 
+RUN dnf config-manager disable fedora-cisco-openh264
+
 RUN dnf install -y \
     qt6-qtbase-devel \
     qt6-qtpdf-devel \
@@ -16,6 +18,8 @@ COPY . .
 RUN qmake6 GraphicsEditor.pro && make -j$(nproc)
 
 FROM fedora:44
+
+RUN dnf config-manager disable fedora-cisco-openh264
 
 RUN dnf install -y \
     qt6-qtbase \
