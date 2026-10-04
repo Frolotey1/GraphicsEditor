@@ -661,7 +661,11 @@ void ApplicationWindow::setupReferenceMenu()
     }
 
     if(isRunningInContainer()) {
-        github_instructions_tool_button->defaultAction()->setVisible(false);
+        if(QAction* action = github_instructions_tool_button->defaultAction()) {
+            action->setVisible(false);
+        }
+        
+        github_instructions_tool_button->setVisible(false);
     } else {
         if (github_instructions_tool_button) {
             connect(github_instructions_tool_button, &QToolButton::clicked, this, []() {
