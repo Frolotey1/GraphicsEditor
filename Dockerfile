@@ -8,6 +8,7 @@ RUN dnf install -y \
     qt6-qtmultimedia-devel \
     qt6-qtsvg-devel \
     qt6-qttools-devel \
+    qt6-qtwayland-devel \
     gcc-c++ \
     make \
     && dnf clean all
@@ -27,14 +28,16 @@ RUN dnf install -y \
     qt6-qtpdf \
     qt6-qtmultimedia \
     qt6-qtsvg \
+    qt6-qtwayland \
     mesa-libGL \
     mesa-libEGL \
     libxkbcommon-x11 \
     xcb-util-cursor \
     && dnf clean all
 
-COPY --from=builder /src/GraphicsEditor /usr/bin/GraphicsEditor
+ENV APP_IN_CONTAINER=1
 
+COPY --from=builder /src/GraphicsEditor /usr/bin/GraphicsEditor
 COPY --from=builder /src/packaging/rpm/graphics-editor.desktop /usr/share/applications/
 COPY --from=builder /src/packaging/rpm/graphics-editor-256.png /usr/share/icons/hicolor/256x256/apps/
 
