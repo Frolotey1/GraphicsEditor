@@ -82,14 +82,15 @@ make -j$(nproc)
 
 3) Установка через пакетные менеджеры в зависимости от того, в какую директорию был добавлен тот или иной пакет. Доступны два формата:
 
+1. RPM-пакет для Fedora 44:
 ```
-1) RPM-пакет для Fedora 44:
-   sudo dnf install GraphicsEditor-1.0-1.fc44.x86_64.rpm
-
-2) DEB-пакет для Debian 13 (trixie):
-   sudo dpkg -i graphics-editor_1.0-1_amd64.deb
+sudo dnf install GraphicsEditor-1.0-1.fc44.x86_64.rpm
 ```
 
+2. DEB-пакет для Debian 13 (trixie):
+```
+sudo dpkg -i graphics-editor_1.0-1_amd64.deb
+```
 4) Если у пользователя отсутствует Qt 6, то есть вариант сборки и запуска приложения через платформу Docker. Для этого нужно иметь установленный Docker на своём персональном компьютере или ноутбуке. Для начала нужно подключить доступ к X-серверу:
 ```
 xhost +local:docker 
