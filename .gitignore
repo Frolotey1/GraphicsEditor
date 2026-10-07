@@ -1,0 +1,127 @@
+# Сгенерированные файлы сборки (qmake)
+
+*.o
+*.obj
+*.lo
+*.slo
+*.la
+*.al
+*.libs
+*.so
+*.so.*
+*.dylib
+*.dll
+*.a
+*.lib
+*.ko
+
+# Исполняемые файлы (собираются из исходников)
+
+GraphicsEditor
+GraphicsEditor.exe
+
+# Файлы, генерируемые qmake / moc
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+qrc_*.h
+ui_*.h
+*.moc
+*.moc.cpp
+
+# Makefile и кэш qmake
+Makefile
+Makefile.*
+*.pro.user
+*.pro.user.*
+.qmake.stash
+.qmake.cache
+.qmake.stash.*
+
+# Директории сборки
+
+build/
+build-*/
+debug/
+release/
+bin/
+out/
+cmake-build-*/
+*.build/
+.qmake.stash/
+
+# Qt Creator / IDE
+
+.qtcreator/
+.qtc_clangd/
+*.qmlproject.user
+*.qmlproject.user.*
+*.qmlc
+*.jsc
+.vscode/
+.idea/
+*.kdev4
+*.kdev4.*
+.kdev4/
+.cproject
+.project
+.settings/
+*.autosave
+
+# Сгенерированные пакеты и артефакты
+
+*.rpm
+*.deb
+*.AppImage
+*.flatpak
+*.snap
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.zip
+
+# Временные файлы, создаваемые rpmbuild / debuild
+*.spec.bak
+*.changes
+*.buildinfo
+*.dsc
+*.dsc.*
+
+# Документация / конфигурации
+
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+*.orig
+*.rej
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Тестовые и временные данные
+
+*.db
+*.sqlite
+*.sqlite3
+sqlitedatabase.db
+*.gif.tmp
+
+# Файлы от Docker
+
+.dockerignore
+docker-compose.override.yml
+*.dockerfile.bak
+
+# Локальные настройки окружения
+
+.env
+.env.local
+*.env
+venv/
+.venv/
+env/
+ENV/
