@@ -35,8 +35,6 @@ RUN dnf install -y \
     xcb-util-cursor \
     && dnf clean all
 
-ENV APP_IN_CONTAINER=1
-
 COPY --from=builder /src/GraphicsEditor /usr/bin/GraphicsEditor
 COPY --from=builder /src/packaging/rpm/graphics-editor.desktop /usr/share/applications/
 COPY --from=builder /src/packaging/rpm/graphics-editor-256.png /usr/share/icons/hicolor/256x256/apps/
