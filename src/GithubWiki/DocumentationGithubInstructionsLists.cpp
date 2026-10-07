@@ -5,8 +5,7 @@ DocumentationGithubInstructionsLists::DocumentationGithubInstructionsLists(QTool
     github_instructions_menu->setToolTipsVisible(true);
 
     github_instructions = {"Панель окна",
-                           "Графическая сцена",
-                           "Действия над объектами на сцене"};
+                           "Графическая сцена"};
 
     for(auto& github_instruction : github_instructions) {
         github_instructions_menu->addAction(github_instruction);
@@ -17,8 +16,6 @@ DocumentationGithubInstructionsLists::DocumentationGithubInstructionsLists(QTool
             github_instruction_action->setToolTip("Инструкция для работы с панелью окна приложения");
         } else if(github_instruction_action->text() == "Графическая сцена") {
             github_instruction_action->setToolTip("Инструкция для работы с графической сценой приложения");
-        } else {
-            github_instruction_action->setToolTip("Инструкция для работы с действиями над объектами на сцене");
         }
     }
 }
