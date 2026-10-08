@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Graphics Editor
+Comment=Графический редактор для создания и редактирования изображений
+Exec=GraphicsEditor
+Icon=graphics-editor
